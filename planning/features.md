@@ -2,6 +2,8 @@
 
 1. Evaluates a string that comprise basic arithmetic expressions. The calculator
   can evaluate expressions including:
+   * lone numbers
+    *ex* 5
 
    * addition
     *ex* 5 + 5
@@ -23,6 +25,3 @@
 
    * multiple of the above with nested parenthesis (with order of ops)
     *ex* 6 / (3 + (2 + 9))
-
-   * lone numbers
-    *ex* 5
