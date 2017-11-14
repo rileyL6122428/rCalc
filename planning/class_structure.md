@@ -16,7 +16,7 @@
             sets output equal to the irreducible result
 
 
-# Questions that will guide OO Desing
+# Questions that will guide OO Design
  What does the parsing?
  What is the input parsed into?
  What evaluates the parsed input?
