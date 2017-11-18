@@ -1,11 +1,21 @@
 require 'rspec'
 require_relative '../src/rcalc.rb'
 
-describe 'rCalc with lone numbers' do
-  it 'evaluates the lone number 5' do
+
+describe 'rCalc' do
+
+  it 'evaluates the lone numbers' do
     rcalc = RCalc.new
     rcalc.enter('5')
     rcalc.submit
     expect(rcalc.output).to eq('5')
   end
+
+  it 'evaluates expressions containing the addition operator' do
+    rcalc = RCalc.new
+    rcalc.enter('1 + 1')
+    rcalc.submit
+    expect(rcalc.output).to eq('2')
+  end
+
 end
