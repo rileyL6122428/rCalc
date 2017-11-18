@@ -2,8 +2,9 @@ class RCalc
 
   attr_reader :input, :output
 
-  def initialize
+  def initialize(interpreter)
     @input = nil
+    @interpreter = interpreter
     @output = nil
   end
 
@@ -12,6 +13,8 @@ class RCalc
   end
 
   def submit
+    @interpreter.interpret(@input)
     @output = @input
   end
+
 end

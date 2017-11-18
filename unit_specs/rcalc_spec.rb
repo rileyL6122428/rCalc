@@ -9,7 +9,8 @@ describe RCalc do
 
   describe '#enter' do
     it 'sets the value of input' do
-      rcalc = RCalc.new
+      interpreter = spy('interpreter')
+      rcalc = RCalc.new(interpreter)
       rcalc.enter('8')
       expect(rcalc.input).to eq('8')
     end
@@ -17,10 +18,20 @@ describe RCalc do
 
   describe '#submit' do
     it 'computes the entered expression' do
-      rcalc = RCalc.new
+      interpreter = spy('interpreter')
+      rcalc = RCalc.new(interpreter)
       rcalc.enter('8')
       rcalc.submit
       expect(rcalc.output).to eq('8')
     end
+
+    it "passes the input to the interpreter" do
+      interpreter = spy('interpreter')
+      rcalc = RCalc.new(interpreter)
+      rcalc.enter('8')
+      rcalc.submit
+      expect(interpreter).to have_received(:interpret).with('8')
+    end
   end
+
 end
