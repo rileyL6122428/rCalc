@@ -6,6 +6,6 @@ describe 'rCalc with lone numbers' do
     rcalc = RCalc.new
     rcalc.enter('5')
     rcalc.submit
-    expect(rcalc.output_display).to eq('5')
+    expect(rcalc.output).to eq('5')
   end
 end

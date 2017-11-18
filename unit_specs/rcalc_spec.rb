@@ -14,4 +14,13 @@ describe RCalc do
       expect(rcalc.input).to eq('8')
     end
   end
+
+  describe '#submit' do
+    it 'computes the entered expression' do
+      rcalc = RCalc.new
+      rcalc.enter('8')
+      rcalc.submit
+      expect(rcalc.output).to eq('8')
+    end
+  end
 end
