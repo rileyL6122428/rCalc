@@ -8,10 +8,6 @@ describe RCalc do
     @rcalc = RCalc.new(@interpreter)
   end
 
-  describe '#initialize' do
-
-  end
-
   describe '#enter' do
     it 'sets the value of input' do
       @rcalc.enter('8')
