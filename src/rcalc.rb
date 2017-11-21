@@ -15,8 +15,8 @@ class RCalc
 
   def submit
     interpreted_input = @interpreter.interpret(@input)
-    @evaluator.evaluate(interpreted_input)
-    # @output = @input
+    result = @evaluator.evaluate(interpreted_input)
+    @output = result.to_s
   end
 
 end
