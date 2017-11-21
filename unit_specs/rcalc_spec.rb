@@ -24,21 +24,21 @@ describe RCalc do
     end
 
     it "passes the interpreted input to evaluator" do
-      @interpreter.stub(:interpret) { [1, 1] }
+      @interpreter.stub(:interpret) { :interpreted_input }
 
       @rcalc.enter('1 + 1')
       @rcalc.submit
 
-      expect(@evaluator).to have_received(:evaluate).with([1, 1])
+      expect(@evaluator).to have_received(:evaluate).with(:interpreted_input)
     end
 
     it "sets the output equal to the evaluated expression converted to a string" do
-      @evaluator.stub(:evaluate) { 2 }
+      @evaluator.stub(:evaluate) { :evaluated_expression }
 
       @rcalc.enter('1 + 1')
       @rcalc.submit
 
-      expect(@rcalc.output).to eq('2')
+      expect(@rcalc.output).to eq('evaluated_expression')
     end
   end
 
