@@ -16,12 +16,6 @@ describe RCalc do
   end
 
   describe '#submit' do
-    it 'computes the entered expression' do
-      @rcalc.enter('8')
-      @rcalc.submit
-      expect(@rcalc.output).to eq('8')
-    end
-
     it "passes the input to the interpreter" do
       @rcalc.enter('8')
       @rcalc.submit
