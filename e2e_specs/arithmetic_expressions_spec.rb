@@ -13,7 +13,7 @@ describe 'rCalc' do
     )
   end
 
-  it 'evaluates the lone numbers' do
+  it 'evaluates lone numbers' do
     @rcalc.enter('5')
     @rcalc.submit
     expect(@rcalc.output).to eq('5')
