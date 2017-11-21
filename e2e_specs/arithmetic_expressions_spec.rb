@@ -1,12 +1,16 @@
 require 'rspec'
 require_relative '../src/rcalc.rb'
 require_relative '../src/interpreter.rb'
+require_relative '../src/evaluator.rb'
 
 
 describe 'rCalc' do
 
   before do
-    @rcalc = RCalc.new(Interpreter.new)
+    @rcalc = RCalc.new(
+      Interpreter.new,
+      Evaluator.new
+    )
   end
 
   it 'evaluates the lone numbers' do
