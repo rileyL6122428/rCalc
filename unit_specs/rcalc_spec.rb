@@ -6,7 +6,8 @@ describe RCalc do
   before do
     @interpreter = spy('interpreter')
     @evaluator = spy('evaluator')
-    @rcalc = RCalc.new(@interpreter, @evaluator)
+    @formatter = spy('formatter')
+    @rcalc = RCalc.new(@interpreter, @evaluator, @formatter)
   end
 
   describe '#enter' do
@@ -32,13 +33,13 @@ describe RCalc do
       expect(@evaluator).to have_received(:evaluate).with(:interpreted_input)
     end
 
-    it "sets the output equal to the evaluated expression converted to a string" do
+    it "passes the evaluated expression to the formatter" do
       @evaluator.stub(:evaluate) { :evaluated_expression }
 
       @rcalc.enter('1 + 1')
       @rcalc.submit
 
-      expect(@rcalc.output).to eq('evaluated_expression')
+      expect(@formatter).to have_received(:format).with(:evaluated_expression)
     end
   end
 
