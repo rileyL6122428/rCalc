@@ -26,4 +26,10 @@ describe 'rCalc' do
     expect(@rcalc.output).to eq('2')
   end
 
+  it 'evaluates expressions containing the subtraction operator' do
+    @rcalc.enter('2 - 1')
+    @rcalc.submit
+    expect(@rcalc.output).to eq('1')
+  end
+
 end
