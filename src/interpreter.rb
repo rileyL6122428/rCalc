@@ -1,7 +1,9 @@
+require_relative 'calculator_input.rb'
+
 class Interpreter
 
   def interpret(input)
-    input.split('+').map(&:strip).map(&:to_f)
+    CalculatorInput.new
   end
-  
+
 end
