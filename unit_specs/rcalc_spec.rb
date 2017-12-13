@@ -24,7 +24,7 @@ describe RCalc do
       expect(@interpreter).to have_received(:interpret).with('8')
     end
 
-    it "passes the interpreted input to evaluator" do
+    it "passes the interpreted input to the evaluator" do
       @interpreter.stub(:interpret) { :interpreted_input }
 
       @rcalc.enter('1 + 1')
