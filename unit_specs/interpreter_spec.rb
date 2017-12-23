@@ -32,6 +32,21 @@ describe Interpreter do
         calculator_input = @interpreter.interpret('10 + 4 - 3')
         expect(calculator_input.initial_value).to eq(10)
       end
+
+      it "sets up the operation queue in the calculator_input" do
+        calculator_input = @interpreter.interpret('10 + 4 - 3')
+
+        operations = []
+        calculator_input.each_operation do |operation|
+          operations << operation
+        end
+
+        expect(operations.length).to eq(2)
+        expect(operations[0].operator).to be(:+)
+        expect(operations[0].number).to eq(4)
+        expect(operations[1].operator).to be(:-)
+        expect(operations[1].number).to eq(3)
+      end
     end
 
   end
