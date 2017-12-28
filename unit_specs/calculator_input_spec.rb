@@ -33,14 +33,14 @@ describe CalculatorInput do
 
   describe "#==" do
     it "returns true when the initial value and operation queue are equivalent" do
-      same_input = CalculatorInput.new(
+      equivalent_input = CalculatorInput.new(
         initial_value: 6,
         operation_queue: [
           Operation.new(operator: :+, number: 3),
           Operation.new(operator: :-, number: 5),
         ]
       )
-      expect(@calculator_input == same_input).to be(true)
+      expect(@calculator_input == equivalent_input).to be(true)
     end
 
     it "returns false when initial values differ" do
