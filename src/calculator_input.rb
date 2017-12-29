@@ -26,10 +26,10 @@ class CalculatorInput
   end
 
   def compare_operation_queues(other_input)
-    return false unless queue.length == other_input.queue.length
+    return false unless operation_queue.length == other_input.operation_queue.length
 
-    (0...queue.length).all? do |index|
-      operation, other_operation = queue[index], other_input.queue[index]
+    (0...operation_queue.length).all? do |index|
+      operation, other_operation = operation_queue[index], other_input.operation_queue[index]
 
       operation.operator == other_operation.operator &&
       operation.number == other_operation.number
@@ -38,7 +38,7 @@ class CalculatorInput
 
   protected
 
-  def queue
+  def operation_queue
     @operation_queue
   end
 
