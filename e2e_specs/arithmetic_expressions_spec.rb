@@ -32,4 +32,10 @@ describe 'rCalc' do
     expect(@rcalc.output).to eq('1')
   end
 
+  it 'evaluates expressions containing parentheses' do
+    @rcalc.enter('1 + (3 - 2)')
+    @rcalc.submit
+    expect(@rcalc.output).to eq('2')
+  end
+
 end
