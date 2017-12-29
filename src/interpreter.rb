@@ -1,6 +1,5 @@
 require_relative 'calculator_input'
 require_relative 'operation'
-require 'byebug'
 
 class Interpreter
 
